@@ -4,6 +4,7 @@ import csv
 import time
 from random import *
 
+# here is the method that contains all that is required to run the program
 def marimba():
     SIZE = 16
     FREQUENCY = 44100
@@ -13,6 +14,7 @@ def marimba():
     pygame.mixer.pre_init(FREQUENCY, SIZE, N_CHANNELS, BUFFER)
     pygame.init()
     pygame.font.init()
+    
     # the following does not keep location of the open window consistent...
     screen = pygame.display.set_mode((1000, 600)) # (width, height)
     ''' colors are defined by 3 integer values corresponding to
@@ -20,7 +22,7 @@ def marimba():
     '''
     screen_color = (255, 255, 255)
 
-    #random generate what color the keyboard is
+    #randomly generate what color the keyboard is
     red_value_key, blue_value_key, green_value_key = randint(0, 250), randint(0, 250), randint(0, 250)
     sky_blue = (red_value_key, blue_value_key, green_value_key)
 
@@ -243,6 +245,7 @@ def marimba():
 
     soundboard_type = "marimba"
     pygame.display.update()
+    
     if soundboard_type == 'drum kit':
         config_file = 'key_to_wav.txt'
 
